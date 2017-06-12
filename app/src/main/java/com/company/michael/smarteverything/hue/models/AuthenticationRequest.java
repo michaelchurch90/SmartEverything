@@ -1,10 +1,10 @@
 package com.company.michael.smarteverything.hue.models;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.google.gson.annotations.SerializedName;
 
 public class AuthenticationRequest {
 
-    @JsonProperty
+    @SerializedName("devicetype")
     private final String deviceType;
 
     public AuthenticationRequest(String deviceType) {
