@@ -20,6 +20,8 @@ android {
 }
 
 dependencies {
+
+    provided "org.projectlombok:lombok:1.16.0"
     compile 'com.android.volley:volley:1.0.0'
     compile 'com.google.code.gson:gson:2.8.1'
     compile fileTree(dir: 'libs', include: ['*.jar'])

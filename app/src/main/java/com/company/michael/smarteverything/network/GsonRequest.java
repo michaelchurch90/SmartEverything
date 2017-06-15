@@ -8,8 +8,6 @@ import com.android.volley.toolbox.HttpHeaderParser;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-import java.lang.reflect.Type;
-
 public class GsonRequest<T, U> extends Request<U> {
     private final Gson gson = new Gson();
     private final Class<U> responseClass;
@@ -44,22 +42,28 @@ public class GsonRequest<T, U> extends Request<U> {
 
     @Override
     public byte[] getBody() throws AuthFailureError {
-        return gson.toJson(body).getBytes();
+        if(body != null) {
+            return gson.toJson(body).getBytes();
+        } else {
+            return null;
+        }
     }
 
     @Override
     protected Response<U> parseNetworkResponse(NetworkResponse response) {
         final String json = new String(response.data);
 
-        U deserialized;
+        final U deserialized;
 
         if(responseClass != null) {
             deserialized = gson.fromJson(json, responseClass);
         } else if(type != null) {
-            deserialized = (U) gson.fromJson(json, type.getClass());
+            deserialized =  gson.fromJson(json, type.getType());
         } else {
             throw new IllegalStateException("Both response class and type are null");
         }
+
+
 
         return Response.success(
                 deserialized,

@@ -1,14 +1,10 @@
 package com.company.michael.smarteverything.hue.models;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+@Data
+@AllArgsConstructor(suppressConstructorProperties = true)
 public class OnOffRequest {
-    private final boolean on;
-
-
-    public OnOffRequest(boolean on) {
-        this.on = on;
-    }
-
-    public boolean isOn() {
-        return on;
-    }
+    private boolean on;
 }
