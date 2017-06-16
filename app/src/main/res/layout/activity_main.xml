@@ -11,25 +11,66 @@
     tools:context="com.company.michael.smarteverything.MainActivity">
 
     <TextView
+        android:text="Group Id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/displayView"
-        android:layout_alignParentTop="true"
+        android:id="@+id/textView3"
+        android:layout_below="@+id/user_id"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="32dp" />
+        android:layout_marginTop="34dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="2"
+        android:ems="10"
+        android:id="@+id/group_id"
+        android:layout_below="@+id/textView3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Switch
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/light_switch"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
         android:checked="false"
         android:text="Light"
-        android:splitTrack="false" />
+        android:splitTrack="false"
+        android:layout_below="@+id/group_id"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="13dp" />
+
+    <TextView
+        android:text="User Id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Z07jhvR8rylPQGsZklnmMntbMqO2DOTvbF8xUyXU"
+        android:ems="10"
+        android:id="@+id/user_id"
+        android:layout_below="@+id/textView2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/displayView"
+        android:text="Json Output Here"
+        android:layout_marginTop="14dp"
+        android:layout_below="@+id/light_switch"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>
